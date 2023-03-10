@@ -7,7 +7,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AppUsersDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServer"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServer"), b => b.MigrationsAssembly("WebApp"));
 });
 
 var app = builder.Build();
